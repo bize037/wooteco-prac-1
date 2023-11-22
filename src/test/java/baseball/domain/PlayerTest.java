@@ -1,6 +1,6 @@
 package baseball.domain;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 import baseball.common.util.Utils;
 import org.junit.jupiter.api.DisplayName;
@@ -14,5 +14,13 @@ public class PlayerTest {
     void outputPlayerNumberListTest(String inputPlayerNumber) {
         Player player = new Player(inputPlayerNumber);
         assertThat(player.getPlayerNumber()).isEqualTo(Utils.putInList(inputPlayerNumber));
+    }
+
+    @DisplayName("공백이 들어오면 예외 처리하는가")
+    @ValueSource(strings = {""})
+    @ParameterizedTest
+    void inBlankPlayerNumberTest(String inputPlayerNumber) {
+        assertThatThrownBy(() -> new Player(inputPlayerNumber))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
