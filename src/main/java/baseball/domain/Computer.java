@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Computer {
-    private List<Integer> computerNumber;
+    private final List<Integer> computerNumber;
 
     public Computer() {
         this.computerNumber = generateComputerNumber();
