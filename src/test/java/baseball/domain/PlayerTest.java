@@ -39,4 +39,12 @@ public class PlayerTest {
         assertThatThrownBy(() -> new Player(inputPlayerNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @DisplayName("3자리 숫자가 아니면 예외 처리하는가")
+    @ValueSource(strings = {"1234", "5", "67"})
+    @ParameterizedTest
+    void notThreeDigitPlayerNumberTest(String inputPlayerNumber) {
+        assertThatThrownBy(() -> new Player(inputPlayerNumber))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
