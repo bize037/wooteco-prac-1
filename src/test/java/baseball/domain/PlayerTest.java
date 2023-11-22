@@ -31,4 +31,12 @@ public class PlayerTest {
         assertThatThrownBy(() -> new Player(inputPlayerNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @DisplayName("문자가 포함되어 있으면 예외 처리하는가")
+    @ValueSource(strings = {"ㅁ12", "7wd", "asd"})
+    @ParameterizedTest
+    void inTextPlayerNumberTest(String inputPlayerNumber) {
+        assertThatThrownBy(() -> new Player(inputPlayerNumber))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
