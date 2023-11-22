@@ -19,7 +19,15 @@ public class PlayerTest {
     @DisplayName("공백이 들어오면 예외 처리하는가")
     @ValueSource(strings = {""})
     @ParameterizedTest
-    void inBlankPlayerNumberTest(String inputPlayerNumber) {
+    void isBlankPlayerNumberTest(String inputPlayerNumber) {
+        assertThatThrownBy(() -> new Player(inputPlayerNumber))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("0이 포함되어 있으면 예외 처리하는가")
+    @ValueSource(strings = {"102", "730", "094"})
+    @ParameterizedTest
+    void inZeroPlayerNumberTest(String inputPlayerNumber) {
         assertThatThrownBy(() -> new Player(inputPlayerNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
