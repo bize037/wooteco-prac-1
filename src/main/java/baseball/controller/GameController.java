@@ -10,6 +10,7 @@ import baseball.view.InputView;
 import camp.nextstep.edu.missionutils.Console;
 
 public class GameController {
+    private static final String GAME_OVER_MESSAGE = "3스트라이크";
     private Computer computer;
     private Player player;
     private Referee referee;
@@ -35,7 +36,7 @@ public class GameController {
             createPlayerNumber();
             judgeBallStrike();
             System.out.println(printScore());
-            if (printScore().equals("3스트라이크")) {
+            if (printScore().equals(GAME_OVER_MESSAGE)) {
                 break;
             }
         }
