@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class Referee {
+    private static final int FIRST_INDEX = 0;
     private long ball;
     private long strike;
 
@@ -21,13 +22,13 @@ public class Referee {
     }
 
     private long countStrike(List<Integer> computerNumbers, List<Integer> playerNumbers) {
-        return IntStream.range(0, computerNumbers.size())
+        return IntStream.range(FIRST_INDEX, computerNumbers.size())
                 .filter(i -> playerNumbers.contains(computerNumbers.get(i)) && i == playerNumbers.indexOf(computerNumbers.get(i)))
                 .count();
     }
 
     private long countBall(List<Integer> computerNumbers, List<Integer> playerNumbers) {
-        return IntStream.range(0, computerNumbers.size())
+        return IntStream.range(FIRST_INDEX, computerNumbers.size())
                 .filter(i -> playerNumbers.contains(computerNumbers.get(i)) && i != playerNumbers.indexOf(computerNumbers.get(i)))
                 .count();
     }
