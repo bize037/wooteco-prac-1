@@ -8,7 +8,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 public class RefereeTest {
-    @DisplayName("볼과 스트라이크를 계산하여 정상적으로 출력하는가")
+    @DisplayName("볼과 스트라이크를 계산하여 정상적으로 리턴하는가")
     @CsvSource(value = {"143,345,1,1", "456,256,0,2", "814,814,0,3"})
     @ParameterizedTest
     void ballStrikeTest(String computerNumber, String playerNumber, String ball, String strike) {
