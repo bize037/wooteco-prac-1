@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Computer {
-    private final List<Integer> computerNumber;
+    private final List<Integer> computerNumbers;
 
     public Computer() {
-        this.computerNumber = notOverlapRandomNumbers(3, 1, 9);
+        this.computerNumbers = notOverlapRandomNumbers(3, 1, 9);
     }
 
-    public List<Integer> getComputerNumber() {
-        return computerNumber;
+    public List<Integer> getComputerNumbers() {
+        return computerNumbers;
     }
 
     private List<Integer> notOverlapRandomNumbers(int numbersCount, int minNumber, int maxNumber) {
