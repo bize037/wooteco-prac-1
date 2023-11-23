@@ -23,16 +23,20 @@ public class GameController {
         while (restart == 1) {
             createComputerNumber();
             repeatsPartsInGame();
+            InputView.successMessage();
+            InputView.inputRestartMessage();
             restart = decideRestartGame();
         }
     }
 
     private void repeatsPartsInGame() {
-        createPlayerNumber();
-        judgeBallStrike();
-        System.out.println(printScore());
-        if (!printScore().equals("3스트라이크")) {
-            repeatsPartsInGame();
+        while(true) {
+            createPlayerNumber();
+            judgeBallStrike();
+            System.out.println(printScore());
+            if (printScore().equals("3스트라이크")) {
+                break;
+            }
         }
     }
 
