@@ -23,7 +23,7 @@ public class GameController {
         while (restart == 1) {
             createComputerNumber();
             repeatsPartsInGame();
-            InputView.successMessage();
+            InputView.printSuccessMessage();
             InputView.inputRestartMessage();
             restart = decideRestartGame();
         }
