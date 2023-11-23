@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.common.constant.GameRule;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ public class Computer {
     private final List<Integer> computerNumbers;
 
     public Computer() {
-        this.computerNumbers = notOverlapRandomNumbers(3, 1, 9);
+        this.computerNumbers = notOverlapRandomNumbers(GameRule.NUMBERS_COUNT.getRule(), GameRule.MIN_NUMBER.getRule(), GameRule.MAX_NUMBER.getRule());
     }
 
     public List<Integer> getComputerNumbers() {
