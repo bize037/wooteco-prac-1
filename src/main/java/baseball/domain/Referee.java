@@ -12,12 +12,12 @@ public class Referee {
         this.strike = countStrike(computerNumbers, playerNumbers);;
     }
 
-    public long getBall() {
-        return ball;
+    public int getBall() {
+        return (int) ball;
     }
 
-    public long getStrike() {
-        return strike;
+    public int getStrike() {
+        return (int) strike;
     }
 
     private long countStrike(List<Integer> computerNumbers, List<Integer> playerNumbers) {
