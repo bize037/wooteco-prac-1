@@ -6,7 +6,7 @@ import baseball.domain.Computer;
 import baseball.domain.Player;
 import baseball.domain.Referee;
 import baseball.domain.ScoreBoard;
-import baseball.view.InputView;
+import baseball.view.View;
 import camp.nextstep.edu.missionutils.Console;
 
 public class GameController {
@@ -16,7 +16,7 @@ public class GameController {
     private Referee referee;
 
     public void start() {
-        InputView.printStartGameMessage();
+        View.printStartGameMessage();
         game();
     }
 
@@ -25,8 +25,8 @@ public class GameController {
         while (restart == GameRule.RESTART_NUMBER.getRule()) {
             createComputerNumber();
             repeatsPartsInGame();
-            InputView.printSuccessMessage();
-            InputView.inputRestartMessage();
+            View.printSuccessMessage();
+            View.inputRestartMessage();
             restart = decideRestartGame();
         }
     }
@@ -47,7 +47,7 @@ public class GameController {
     }
 
     private void createPlayerNumber() {
-        InputView.inputNumberMessage();
+        View.inputNumberMessage();
         player = new Player(Console.readLine());
     }
 
