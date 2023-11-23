@@ -12,6 +12,7 @@ public enum ScoreBoard {
     private static final String BALL_MESSAGE = "%d볼";
     private static final String STRIKE_MESSAGE = "%d스트라이크";
     private static final String NOTHING_MESSAGE = "낫싱";
+    private static final String NOTHING_STRING = "";
 
     private final BiPredicate<Integer, Integer> judge;
 
@@ -37,6 +38,6 @@ public enum ScoreBoard {
         if (this == STRIKE) {
             return String.format(STRIKE_MESSAGE, strike);
         }
-        return "";
+        return NOTHING_STRING;
     }
 }
