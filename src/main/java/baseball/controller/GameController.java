@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.common.constant.GameRule;
 import baseball.common.validate.Validate;
 import baseball.domain.Computer;
 import baseball.domain.Player;
@@ -19,8 +20,8 @@ public class GameController {
     }
 
     private void game() {
-        int restart = 1;
-        while (restart == 1) {
+        int restart = GameRule.RESTART_NUMBER.getRule();
+        while (restart == GameRule.RESTART_NUMBER.getRule()) {
             createComputerNumber();
             repeatsPartsInGame();
             InputView.printSuccessMessage();

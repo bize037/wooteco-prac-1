@@ -1,11 +1,11 @@
 package baseball.common.validate;
 
+import baseball.common.constant.GameRule;
+
 public class Validate {
     private static final int DIGIT_LENGTH = 3;
     private static final String ZERO = "0";
     private static final String NUMBER_PATTERN = "\\d+";
-    private static final String RESTART_NUMBER = "1";
-    private static final String END_NUMBER = "2";
 
     public static void isBlank(String input) {
         if (input.isBlank()) {
@@ -32,7 +32,7 @@ public class Validate {
     }
 
     public static void notOneOrTwo(String input) {
-        if (!input.equals(RESTART_NUMBER) && !input.equals(END_NUMBER)) {
+        if (!input.equals(String.valueOf(GameRule.RESTART_NUMBER.getRule())) && !input.equals(String.valueOf(GameRule.END_NUMBER.getRule()))) {
             throw new IllegalArgumentException();
         }
     }
