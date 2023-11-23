@@ -8,15 +8,11 @@ public class Computer {
     private final List<Integer> computerNumber;
 
     public Computer() {
-        this.computerNumber = generateComputerNumber();
+        this.computerNumber = notOverlapRandomNumbers(3, 1, 9);
     }
 
     public List<Integer> getComputerNumber() {
         return computerNumber;
-    }
-
-    private List<Integer> generateComputerNumber() {
-        return notOverlapRandomNumbers(3, 1, 9);
     }
 
     private List<Integer> notOverlapRandomNumbers(int numbersCount, int minNumber, int maxNumber) {
