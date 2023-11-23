@@ -3,7 +3,7 @@ package baseball.domain;
 import java.util.Arrays;
 import java.util.function.BiPredicate;
 
-public enum Referee {
+public enum ScoreBoard {
     BALL_AND_STRIKE((ball, strike) -> ball > 0 && strike > 0),
     ONLY_BALL((ball, strike) -> ball > 0 && strike == 0),
     ONLY_STRIKE((ball, strike) -> ball == 0 && strike > 0);
@@ -15,11 +15,11 @@ public enum Referee {
 
     private final BiPredicate<Integer, Integer> judge;
 
-    Referee(BiPredicate<Integer, Integer> judge) {
+    ScoreBoard(BiPredicate<Integer, Integer> judge) {
         this.judge = judge;
     }
 
-    public static String getReferee(int ball, int strike) {
+    public static String getScore(int ball, int strike) {
         return Arrays.stream(values())
                 .filter(referee -> referee.judge.test(ball, strike))
                 .findFirst()
