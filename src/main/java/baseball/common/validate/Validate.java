@@ -24,4 +24,10 @@ public class Validate {
             throw new IllegalArgumentException();
         }
     }
+
+    public static void notOneOrTwo(String input) {
+        if (!input.equals("1") && !input.equals("2")) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
